@@ -1,0 +1,27 @@
+<head>
+  <title>twitter clone in meteor</title>
+</head>
+<body>
+  <h1>Meteor tweets</h1>
+  {{>tweetInput}}
+  {{>listTweets}}
+</body>
+
+<template name="tweetInput">
+  <form class="form-horizontal tweetInput container form-group" id="tweetForm" role="form">
+    <textarea id="tweetBody" rows="3" class="form-control" placeholder="What's on your mind?"></textarea>
+  <div class="button container submitButton">
+    <button type="submit" class="btn btn-default">Send</button>
+  </div>
+  </form>
+</template>
+
+<template name="listTweets">
+  <div class="container">
+  {{#each tweets}}
+    <div class="tweets container">
+    <p>{{tweetBody}}</p>
+  </div>
+  {{/each}}
+  </div>
+</template>
