@@ -4,3 +4,7 @@ Meteor.methods({
   Tweets.insert({tweetBody:tweetBody});
   }
 })
+
+Meteor.publish('Tweets', function(options){
+  return Tweets.find({}, options);
+});
